@@ -1,0 +1,126 @@
+.header {
+    &__top {
+        background-color: $bg;
+        &-inner {
+           color: #fff;
+           display: flex;
+           justify-content: space-between;
+           font-size: 14px;
+           height: 38px;
+           align-items: center;
+        }
+    }
+    &__text {
+        a {
+            color: #fff;
+            &:last-child {
+                margin-left: 15px;
+                
+            }
+        }
+    }
+    &__box {
+        display: flex;
+        &-item {
+            color: #fff;
+            font-family: 'icomoon';
+            padding-left: 12px;
+            font-size: 14px;
+            &.icon-vk {
+                padding-left: 15px;
+            }
+        }
+    }
+    &__block {
+        &-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-bottom: 14px;
+        }
+    }
+    &__logo {
+        font-size: 32px;
+        color: $bg;
+        text-transform: uppercase;
+        font-weight: 900;
+        span {
+            color: #2F8F41;
+        }
+    }
+    &__menu {
+        background-color: #F5F5F5;
+        border: 1px solid #E5E5E5;
+        &-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        } 
+    }
+    &__items {
+        display: flex;
+        align-items: center;
+        button {
+            width: 32px;
+            height: 32px;
+            background-color: #2F8F41;
+            outline: none;
+            border-radius: 3px;
+            cursor: pointer;
+            border: none;
+        }
+        .icon-search {
+            color: #fff;
+            font-size: 20px;
+        }
+    }
+    &__item {
+        &--app {
+            a {
+                background-color: #fff;
+                border: 1px solid #9A9D9F;
+                color: $bg; 
+                
+            }
+        }
+        &--watch {
+            a {
+                background-color: #CD201F;
+                color: #fff; 
+            }
+        }
+        a {
+            display: flex;
+            margin-right: 8px;
+            height: 32px;
+            align-items: center;
+            border-radius: 3px;
+        }
+        &-text {
+            padding-right: 12px;
+            padding-left: 7px;
+            font-weight: 700;
+            font-size: 15px;
+        }
+        &-icon {
+            padding-left: 12px;
+            margin-top: 4px;
+        }
+    }
+}
+.menu {
+    &__list {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        font-weight: 700;
+        text-transform: uppercase;
+        a {
+            color: $bg;
+        }
+        li + li {
+            margin-left: 26px;
+        }
+    }
+}
