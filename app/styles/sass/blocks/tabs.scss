@@ -2,8 +2,15 @@
     &_content {
         display: flex;
         margin-top: 48px;
-        .tab-item {
+        @media(max-width: 1200px){
+            display: flex;
+            flex-direction: column;
+        }
+            .tab-item {
             display: none;
+            @media(max-width: 750px){
+                padding: 0 15px;
+            }
             &.active-tab {
                 display: flex;
                 flex-direction: column;
@@ -13,27 +20,54 @@
     &_card{
         border: 1px solid #E0E0E0;
         background-color: #FAFAFA;
+        @media(max-width: 1200px){
+            margin: 0 auto;
+        }
+        @media(max-width: 750px){
+            width: 100%;
+        }
         & + & {
             margin-top: 30px;
         }
         &__row {
             display: flex;
+           
             &--footer {
                 margin-top: 7px;
                 margin-left: 15px;
                 margin-bottom: 11px;
+                @media(max-width: 750px){
+                    display: block;
+                    
+                }
+                
                 a {
                     font-size: 16px;
                     line-height: 30px;
                     border-bottom: 1px dashed #4CAF50;
+                }
+                &-text {
+                    display: none;
+                    @media(max-width: 750px){
+                        display: none;
+                        margin-top: 15px;
+                        span {
+                            display: block;
+                            font-size: 14px;
+                            margin-top: 3px;
+                        }
+                    }
                 }
             }
         }
         &__thumb {
             display: block;
             text-align: center;
+            @media(max-width: 750px) {
+                display: none;
+            }
             &-image {
-                position: relative;
+                position: relative; 
                 &::after {
                     content: '';
                     position: absolute;
@@ -42,12 +76,13 @@
                     display: block;
                     width: 230px;
                     height: 160px;
-                    top: 5px;                   
+                    top: 5px;                
                 }
             }
             &-buttons {
                 background-color: #060809;
                 padding: 17px 15px 15px;
+                
             }
             &-button {
                 
@@ -69,6 +104,9 @@
         &__content {
             background-color: #fff;
             border-bottom: 1px solid #E0E0E0;
+            @media(max-width: 1750px){
+                width: 100%;
+            }
         }
         &__head {
             border-bottom: 1px solid #E0E0E0;
@@ -76,6 +114,15 @@
             background-color: #fafafa;
         }
         &__tags {
+            &-row {
+                @media(max-width: 750px) {
+                    display: flex;
+                    justify-content: space-between;
+                    text-align: center;
+                    margin-top: 15px;
+
+                }
+            }
             a {
                 color: #fff;
                 font-weight: 700;
@@ -87,10 +134,22 @@
                 font-size: 14px;
                 margin-bottom: 10px;
             }
+            img {
+                display: none;
+                @media(max-width: 750px){
+                    display: block;
+                    width: 100px;
+                    height: 80px;
+                }
+            }
             h2 {
                 font-size: 18px;
                 font-weight: 400;
                 margin: 0;
+                @media(max-width: 750px) {
+                    margin-left: 15px;
+                    font-weight: 700;
+                }
             }
         }
         &__main {
@@ -100,6 +159,11 @@
             padding-left: 16px;
             padding-top: 6px;
             padding-bottom: 16px;
+            @media(max-width: 750px) {
+                display: flex;
+                flex-direction: column;
+                max-height: 140px;
+            }
             
         }
         &__text {
@@ -107,19 +171,28 @@
             flex-direction: column;
             flex: 33%;
             margin-top: 5px;
+            @media(max-width: 750px){
+                &:nth-child(3),  &:nth-child(6)  {
+                    display: none;
+                }
+            }
             span {
                 font-size: 14px;
                 color: $bg;
                 line-height: 25px;
+                
                 &.main {
                     color: $bg;
                     font-size: 18px;
                     font-weight: 700;
+                    
                 }
             }  
         }
         &__footer {
             display: flex;
+            margin-right: 15px;
+            margin-bottom: 15px;
         }
         &__button {
             font-size: 16px;
@@ -132,6 +205,9 @@
                 color: #fff;
                 padding: 5px 0;
                 width: 145px;
+                @media(max-width: 750px){
+                    display: none;
+                }
             }
             &--border {
                 background-color: #fff;
@@ -139,22 +215,35 @@
                 color: $bg;
                 width: 155px;
                 padding: 5px 0;
+                @media(max-width: 750px){
+                    display: none;
+                }
             }
             &--red {
                 background-color: #F83030;
                 color: #fff;
                 padding: 5px 0;
                 width: 159px;
+                @media(max-width: 750px) {
+                    width: 100%;
+                }
             }
         }
     }
     &_aside {
+        @media (max-width: 750px){
+            padding: 0 15px;
+        }
         .last {
             padding-bottom: 15px;
             border-bottom: 1px solid #E0E0E0;
         }
         &__card {
             margin-left: 30px;
+            @media(max-width: 1200px){
+                margin-left: 0;
+                margin-top: 30px;
+            }
             &--feedbacks {
                 margin-top: 30px;
                 .product_aside {
@@ -166,7 +255,7 @@
                             margin-top: 16px;
                         }
                         &-info {
-                            padding-right: 10px;    
+                            padding-right: 10px;   
                            p {    
                                font-size: 16px;
                                color: $bg;
@@ -231,6 +320,11 @@
             }
             &-info {
                 margin-left: 15px;
+                &.bookmakers {
+                    @media(max-width: 1200px){
+                        width: 100%;
+                    }
+                }
                p {
                    margin: 0;
                    margin-top: -6px;

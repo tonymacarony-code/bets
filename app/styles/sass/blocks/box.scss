@@ -4,23 +4,90 @@
         text-align: center;
         padding-top: 20px;
         padding-bottom: 30px;
+        @media(max-width: 750px) {
+            padding-top: 20px;
+            padding-bottom: 0;
+        }
         h1 {
             color: #fff;
             font-size: 38px;
+            @media(max-width: 750px) {
+                margin-top: 0;
+                padding: 0 15px;
+            }
         }
     }
     &__text {
         color: #fff;
         font-size: 16px;
         line-height: 26px;
+        @media(max-width: 750px){
+            
+            position: relative;
+            max-height: 139px;
+            overflow-y: hidden;
+            padding: 0 15px;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 50px;
+                left: 0;
+                top: 89px;
+                background: linear-gradient(180deg, rgba(5, 7, 8, 0.319421) 0%, rgba(6, 8, 9, 0.24) 0.01%, #060809 70.31%, #000000 99.92%, #060809 99.93%, rgba(204, 204, 204, 0.686417) 99.94%, rgba(177, 177, 177, 0.729419) 99.95%, #060809 99.96%, rgba(0, 0, 0, 0.533801) 99.97%);
+                z-index: 1;
+            }
+            
+        }
+    }
+    &__dots {
+        display: none;
+        @media (max-width: 750px){
+            display: block;
+            position: absolute;
+            width: 100%;
+            font-size: 48px;
+            color: #fff;
+            margin: 0 auto;
+            top: 215px;
+            z-index: 2;
+        }
+        @media (max-width: 669px){
+            top: 260px;
+        }
+        @media (max-width: 392px){
+            top: 300px;
+        }
     }
     &__menu {
         background-color: #F5F5F5;
         padding: 15px 0;
+        position: relative;
+        @media (max-width: 1200px){
+            padding: 0;
+        }
     }
     &__tabs {
         max-width: 960px;
         margin: 0 auto;
+        @media (max-width: 1200px){
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+        @media (max-width: 750px){
+            &::after {
+                content: '';
+                position: absolute;
+                width: 35px;
+                height: 45px;
+                right: 5px;
+                top: -5px;
+                background: linear-gradient(180deg, #B2B7BA 0%, rgba(196, 196, 196, 0) 100%);
+                transform: rotate(90deg);
+                
+            }
+        }
         .tabs {
             display: flex;
             justify-content: space-between;
@@ -30,6 +97,9 @@
                 border: 1px solid #B2B7BA;
                 border-radius: 5px;
                 font-weight: 700;
+                @media (max-width: 1200px){
+                    border-radius: 0px;
+                }
                 &:hover {
                     background-color: #1E88E5 opacity 0.9;
                     border: 1px solid #1E88E5;
